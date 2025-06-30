@@ -1,0 +1,21 @@
+# Global ignores for the whole project
+.DS_Store
+.env
+*.env
+*.log
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Serverless
+.serverless/
+
+# VSCode
+.vscode/

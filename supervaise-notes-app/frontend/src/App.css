@@ -1,0 +1,128 @@
+/* App.css */
+
+/* Root variables and base styles */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  line-height: 1.5;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Body layout */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #242424;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main app container */
+#root {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem 2.5rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Input group for adding notes */
+.input-group {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+input {
+  flex: 1;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #2c2c2c;
+  color: white;
+  font-size: 1rem;
+}
+
+/* Button styles */
+button {
+  padding: 0.75rem 1.25rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+button:hover {
+  background-color: #535bf2;
+}
+
+/* Notes list */
+ul {
+  max-height: 300px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+li {
+  padding: 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c2c2c;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.2s;
+}
+
+li:hover {
+  background-color: #3b3b3b;
+}
+
+/* Delete button in note list */
+li button {
+  background-color: transparent;
+  color: #e74c3c;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 0.75rem;
+  font-size: 1rem;
+}
+
+li button:hover {
+  color: #ff6b61;
+}
