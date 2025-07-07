@@ -19,3 +19,9 @@ __pycache__/
 
 # VSCode
 .vscode/
+
+# Amplify Gen 2 (frontend)
+frontend/amplify/node_modules/
+frontend/amplify/package-lock.json
+frontend/amplify/dist/
+frontend/amplify/.ampx/

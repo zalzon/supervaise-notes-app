@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
+import { useAuthenticator } from "@aws-amplify/ui-react";
 
 // API endpoint for notes backend
 const API =
@@ -14,6 +15,7 @@ function App() {
   // State for notes list and new note input
   const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState("");
+  const { user, signOut } = useAuthenticator();
 
   // Fetch notes from backend on component mount
   useEffect(() => {
@@ -40,7 +42,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Supervaise Notes</h1>
+      <h1>{user?.signInDetails?.loginId}'s Supervaise Notes</h1>
       <div className="input-group">
         <input value={newNote} onChange={(e) => setNewNote(e.target.value)} />
         <button onClick={addNote}>Add</button>
@@ -53,6 +55,9 @@ function App() {
           </li>
         ))}
       </ul>
+      <button className="signout-btn" onClick={signOut}>
+        Sign out
+      </button>
     </div>
   );
 }

@@ -126,3 +126,22 @@ li button {
 li button:hover {
   color: #ff6b61;
 }
+
+/* Sign-out button */
+.signout-btn {
+  margin-top: 2rem;
+  align-self: flex-end;
+  background-color: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.signout-btn:hover {
+  background-color: #ff6b61;
+}
