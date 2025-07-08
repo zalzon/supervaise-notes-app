@@ -1,4 +1,9 @@
-# TeamNotes App - Setup Guide
+# Supervaise Notes App - Setup Guide
+
+**Internship Project for Supervaise Inc.**
+
+- **Supervisor**: John Gregory Jose
+- **Project**: Team collaboration application with AWS Amplify Gen 2
 
 ## Prerequisites
 

@@ -1,6 +1,6 @@
 {
-  "name": "teamnotes-app",
-  "description": "A secure, scalable team collaboration app with role-based access control built with AWS Amplify Gen 2",
+  "name": "supervaise-notes-app",
+  "description": "Supervaise Inc. internship project - A secure team collaboration app with role-based access control built with AWS Amplify Gen 2",
   "private": true,
   "version": "1.0.0",
   "type": "module",

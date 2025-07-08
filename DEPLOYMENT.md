@@ -1,4 +1,9 @@
-# Project Setup & Deployment Guide
+# Supervaise Notes App - Setup & Deployment Guide
+
+**Internship Project for Supervaise Inc.**
+
+- **Supervisor**: John Gregory Jose
+- **Project**: Full-stack team collaboration application
 
 ## 🚀 Pre-GitHub Checklist
 
@@ -63,7 +68,7 @@ The project is now ready to be pushed to GitHub with:
 
    ```bash
    git add .
-   git commit -m "feat: Complete TeamNotes app with role-based access control"
+   git commit -m "feat: Complete Supervaise Notes app with role-based access control"
    git push origin main
    ```
 

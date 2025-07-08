@@ -1,12 +1,18 @@
-# TeamNo- 👥 **Team Notes**: Shared notes visible to all team members with creator attributiones App
+# Supervaise Notes App
 
-A secure, scalable team collaboration app built with AWS Amplify Gen 2, featuring role-based access control and modern UI.
+A secure, scalable team collaboration app built with AWS Amplify Gen 2 for Supervaise Inc. internship project, featuring role-based access control and modern UI.
+
+**Internship Project**
+
+- **Company**: Supervaise Inc.
+- **Supervisor**: John Gregory Jose
+- **Project Type**: Full-stack web application development
 
 ## 🌟 Features
 
 - 🔐 **Secure Authentication**: Users sign in with email using AWS Cognito
 - 📝 **Personal Notes**: Each user can create and manage their own private notes
-- � **Team Notes**: Shared notes visible to all team members with creator attribution
+- 👥 **Team Notes**: Shared notes visible to all team members with creator attribution
 - 🎖️ **Role-based Access**: Guest, Employee, and Admin roles with different permissions
 - 👤 **User Management**: Admin panel for managing users and their roles
 - 🎨 **Modern UI**: Clean, responsive React interface with consistent design
@@ -43,7 +49,7 @@ A secure, scalable team collaboration app built with AWS Amplify Gen 2, featurin
 
    ```bash
    git clone <your-repo-url>
-   cd teamnotes-app
+   cd supervaise-notes-app
    ```
 
 2. **Install dependencies**
@@ -76,7 +82,7 @@ npx ampx deploy --profile <your-aws-profile>
 ## 📁 Project Structure
 
 ```
-teamnotes-app/
+supervaise-notes-app/
 ├── src/
 │   ├── App.jsx              # Main application component
 │   ├── App.css              # Main styling

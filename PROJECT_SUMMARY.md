@@ -1,10 +1,17 @@
-# Project Summary
+# Supervaise Notes App - Project Summary
+
+**Internship Project for Supervaise Inc.**
+
+- **Company**: Supervaise Inc.
+- **Supervisor**: John Gregory Jose
+- **Developer**: Intern
+- **Project Type**: Full-stack web application
 
 ## 🎯 Project Transformation Complete
 
 ### What We Built
 
-Transformed a simple notes app into **TeamNotes** - a secure, scalable team collaboration platform with:
+Transformed a simple notes app into **Supervaise Notes App** - a secure, scalable team collaboration platform with:
 
 ### ✅ Core Features Implemented
 
@@ -35,7 +42,7 @@ Transformed a simple notes app into **TeamNotes** - a secure, scalable team coll
 ### ✅ Project Structure
 
 ```
-teamnotes-app/
+supervaise-notes-app/
 ├── src/
 │   ├── App.jsx              # Main app with navigation
 │   ├── App.css              # Complete styling system
