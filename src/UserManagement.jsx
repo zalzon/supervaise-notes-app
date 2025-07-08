@@ -36,6 +36,49 @@ function UserManagement() {
     setEditingUser(null);
   };
 
+  const handleDeleteUser = async (userToDelete) => {
+    const currentUser = getCurrentUserProfile();
+
+    // Safety checks
+    if (!currentUser || currentUser.role !== "admin") {
+      alert("Only admins can delete users.");
+      return;
+    }
+
+    if (userToDelete.id === currentUser.id) {
+      alert("You cannot delete your own account.");
+      return;
+    }
+
+    if (userToDelete.role === "admin") {
+      const adminCount = users.filter((u) => u.role === "admin").length;
+      if (adminCount <= 1) {
+        alert(
+          "Cannot delete the last admin user. At least one admin must remain."
+        );
+        return;
+      }
+    }
+
+    const confirmDelete = window.confirm(
+      `Are you sure you want to delete ${userToDelete.name || "this user"}? This action cannot be undone.`
+    );
+
+    if (!confirmDelete) return;
+
+    try {
+      setLoading(true);
+      await client.models.User.delete({ id: userToDelete.id });
+      fetchUsers(); // Refresh the list
+      alert("User deleted successfully.");
+    } catch (error) {
+      console.error("Error deleting user:", error);
+      alert("Error deleting user. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   const getCurrentUserProfile = () => {
     return users.find((u) => u.email === user?.signInDetails?.loginId);
   };
@@ -87,12 +130,21 @@ function UserManagement() {
                 </span>
               </div>
               {isCurrentUserAdmin() && (
-                <button
-                  onClick={() => handleEditUser(userItem)}
-                  className="edit-user-btn"
-                >
-                  Edit
-                </button>
+                <div className="user-actions">
+                  <button
+                    onClick={() => handleEditUser(userItem)}
+                    className="edit-user-btn"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDeleteUser(userItem)}
+                    className="delete-user-btn"
+                    disabled={loading}
+                  >
+                    Delete
+                  </button>
+                </div>
               )}
             </li>
           ))

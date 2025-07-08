@@ -40,23 +40,27 @@ function ProfileSetup({ onProfileCreated }) {
 
   return (
     <div className="container">
-      <h1>Welcome! Let&apos;s set up your profile</h1>
+      <div className="profile-setup-form">
+        <h1>Welcome! Let&apos;s set up your profile</h1>
+        
+        <div className="profile-info">
+          <small>
+            Email: <strong>{user?.signInDetails?.loginId}</strong>
+          </small>
+        </div>
 
-      <div className="profile-setup">
-        <p>
-          Email: <strong>{user?.signInDetails?.loginId}</strong>
-        </p>
-
-        <div className="input-group">
+        <div className="form-field">
+          <label>Display Name</label>
           <input
             type="text"
             value={profile.name}
             onChange={(e) => setProfile({ ...profile, name: e.target.value })}
-            placeholder="Your full name..."
+            placeholder="Enter your display name..."
           />
         </div>
 
-        <div className="input-group">
+        <div className="form-field">
+          <label>Department</label>
           <input
             type="text"
             value={profile.department}
@@ -67,7 +71,8 @@ function ProfileSetup({ onProfileCreated }) {
           />
         </div>
 
-        <div className="input-group">
+        <div className="form-field">
+          <label>Role</label>
           <select
             value={profile.role}
             onChange={(e) => setProfile({ ...profile, role: e.target.value })}
@@ -78,13 +83,15 @@ function ProfileSetup({ onProfileCreated }) {
           </select>
         </div>
 
-        <button
-          onClick={createProfile}
-          disabled={loading}
-          className={loading ? "loading" : ""}
-        >
-          {loading ? "Creating Profile..." : "Create Profile"}
-        </button>
+        <div className="form-actions">
+          <button
+            onClick={createProfile}
+            disabled={loading}
+            className={loading ? "loading" : "save-btn"}
+          >
+            {loading ? "Creating Profile..." : "Create Profile"}
+          </button>
+        </div>
       </div>
     </div>
   );
