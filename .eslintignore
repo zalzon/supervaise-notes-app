@@ -1,0 +1,12 @@
+# Generated files
+
+.amplify/
+node_modules/
+dist/
+build/
+\*.log
+amplify_outputs.json
+
+# CDK generated files
+
+.amplify/artifacts/

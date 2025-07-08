@@ -6,6 +6,14 @@ import { defineConfig } from "eslint/config";
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,jsx}"],
+    // Ignore generated files
+    ignores: [
+      ".amplify/**",
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "amplify_outputs.json",
+    ],
     plugins: { js },
     extends: ["js/recommended"],
   },

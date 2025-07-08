@@ -1,4 +1,4 @@
-# Personal Notes App - Setup Guide
+# TeamNotes App - Setup Guide
 
 ## Prerequisites
 
@@ -11,7 +11,6 @@
 ### Day 1: Environment Setup
 
 - [ ] Clone this repository
-- [ ] Navigate to the frontend directory: `cd frontend`
 - [ ] Install dependencies: `npm install`
 - [ ] Configure AWS CLI with your profile: `aws configure --profile <your-profile>`
 
