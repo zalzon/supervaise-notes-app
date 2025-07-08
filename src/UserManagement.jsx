@@ -13,10 +13,15 @@ function UserManagement() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
+      console.log("Fetching users...");
       const { data: items } = await client.models.User.list();
+      console.log("Fetched users:", items);
       setUsers(items || []);
     } catch (error) {
-      console.error("Error:", error);
+      console.error("Error fetching users:", error);
+      alert(
+        `Error loading users: ${error.message || "Please refresh the page."}`
+      );
       setUsers([]);
     } finally {
       setLoading(false);
@@ -68,12 +73,25 @@ function UserManagement() {
 
     try {
       setLoading(true);
-      await client.models.User.delete({ id: userToDelete.id });
-      fetchUsers(); // Refresh the list
+      console.log("Attempting to delete user with ID:", userToDelete.id);
+
+      const deleteResult = await client.models.User.delete({
+        id: userToDelete.id,
+      });
+      console.log("Delete result:", deleteResult);
+
+      // Remove the user from local state immediately
+      setUsers((prevUsers) =>
+        prevUsers.filter((u) => u.id !== userToDelete.id)
+      );
+
+      // Also refresh from server to ensure consistency
+      await fetchUsers();
+
       alert("User deleted successfully.");
     } catch (error) {
       console.error("Error deleting user:", error);
-      alert("Error deleting user. Please try again.");
+      alert(`Error deleting user: ${error.message || "Please try again."}`);
     } finally {
       setLoading(false);
     }

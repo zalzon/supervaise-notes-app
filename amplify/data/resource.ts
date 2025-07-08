@@ -17,9 +17,7 @@ const schema = a.schema({
       createdAt: a.datetime(),
     })
     .authorization((allow) => [
-      allow.owner(),
-      allow.authenticated().to(["read"]),
-      allow.group("admins").to(["create", "read", "update", "delete"]),
+      allow.authenticated().to(["create", "read", "update", "delete"]),
     ]),
 
   TeamNote: a
