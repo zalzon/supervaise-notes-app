@@ -1,36 +1,58 @@
-# Onboarding Checklist
+# Personal Notes App - Setup Guide
 
-## Day 1: Environment Setup
-- [ ] Install Node.js, Python 3.9+, AWS CLI, Serverless Framework
-- [ ] Setup AWS credentials locally
-- [ ] Clone this repo and install dependencies
+## Prerequisites
 
-## Day 2: Backend
-- [ ] Understand `serverless.yml` and `handler.py`
-- [ ] Implement GET/POST/DELETE Lambdas with DynamoDB
-- [ ] Use [Serverless Offline](https://github.com/dherault/serverless-offline)
+- [ ] Install Node.js 18+
+- [ ] Install AWS CLI and configure with your AWS credentials
+- [ ] Install Git
 
-## Day 3: Frontend
-- [ ] Setup React project
-- [ ] Create UI to call mock API
+## Setup Instructions
 
-## Day 4-5: Integration & Deployment
-- [ ] Connect frontend to backend
-- [ ] Deploy backend via Serverless
-- [ ] Host frontend on S3
+### Day 1: Environment Setup
 
-## Day 6-7: Finalization
-- [ ] Polish code (linting, env vars)
-- [ ] Write README
-- [ ] Demo your work
+- [ ] Clone this repository
+- [ ] Navigate to the frontend directory: `cd frontend`
+- [ ] Install dependencies: `npm install`
+- [ ] Configure AWS CLI with your profile: `aws configure --profile <your-profile>`
 
----
+### Day 2: Understanding the Architecture
 
-## 📝 Daily Updates
+- [ ] Review the AWS Amplify Gen 2 documentation
+- [ ] Understand the authentication flow with Cognito
+- [ ] Review the GraphQL schema in `amplify/data/resource.ts`
+- [ ] Understand per-user access control with `allow.owner()`
 
-At the end of each day, please send a brief update with the following:
-- ✅ What you accomplished today
-- 🔍 Any blockers or questions
-- 📅 Plan for tomorrow
+### Day 3: Development Environment
 
-Send this update via email or direct message to your supervisor by 6:00 PM daily.
+- [ ] Start the Amplify sandbox: `npx ampx sandbox --profile <your-profile>`
+- [ ] Start the development server: `npm run dev`
+- [ ] Create a test user account and verify authentication works
+- [ ] Test creating, viewing, and deleting notes
+
+### Day 4: Testing Security
+
+- [ ] Create two different user accounts
+- [ ] Verify that each user can only see their own notes
+- [ ] Test that users cannot access each other's notes
+- [ ] Review the DynamoDB table structure in AWS Console
+
+### Day 5: Deployment
+
+- [ ] Deploy to production: `npx ampx deploy --profile <your-profile>`
+- [ ] Test the production deployment
+- [ ] Verify all functionality works in production
+
+## Architecture Overview
+
+**Frontend**: React app with Amplify UI components
+**Backend**: AWS Amplify Gen 2 with GraphQL API
+**Database**: DynamoDB with automatic user isolation
+**Authentication**: AWS Cognito user pools
+
+## Key Features
+
+- ✅ Secure per-user authentication
+- ✅ Automatic data isolation (users can only see their own notes)
+- ✅ Real-time GraphQL API
+- ✅ Modern React UI
+- ✅ Serverless architecture

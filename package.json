@@ -1,7 +1,8 @@
 {
-  "name": "frontend",
+  "name": "notes-app",
+  "description": "Personal notes app with AWS Amplify Gen 2 - secure per-user access",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
