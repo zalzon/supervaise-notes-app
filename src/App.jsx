@@ -27,13 +27,10 @@ function App() {
   const checkUserProfile = async () => {
     try {
       setProfileLoading(true);
-      console.log("Checking user profile for:", user?.signInDetails?.loginId);
       const { data: users } = await client.models.User.list();
-      console.log("All users found:", users);
       const existingProfile = users.find(
         (u) => u.email === user?.signInDetails?.loginId
       );
-      console.log("Existing profile found:", existingProfile);
       setUserProfile(existingProfile);
     } catch (error) {
       console.error("Error checking profile:", error);

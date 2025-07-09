@@ -13,9 +13,7 @@ function UserManagement() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      console.log("Fetching users...");
       const { data: items } = await client.models.User.list();
-      console.log("Fetched users:", items);
       setUsers(items || []);
     } catch (error) {
       console.error("Error fetching users:", error);
@@ -73,12 +71,10 @@ function UserManagement() {
 
     try {
       setLoading(true);
-      console.log("Attempting to delete user with ID:", userToDelete.id);
 
-      const deleteResult = await client.models.User.delete({
+      await client.models.User.delete({
         id: userToDelete.id,
       });
-      console.log("Delete result:", deleteResult);
 
       // Remove the user from local state immediately
       setUsers((prevUsers) =>

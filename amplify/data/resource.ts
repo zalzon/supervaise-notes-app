@@ -4,6 +4,7 @@ const schema = a.schema({
   Note: a
     .model({
       content: a.string(),
+      owner: a.string(),
     })
     .authorization((allow) => [allow.owner()]),
 
@@ -32,19 +33,6 @@ const schema = a.schema({
       allow.authenticated().to(["read"]),
       allow.owner().to(["create", "update", "delete"]),
       allow.group("managers").to(["create", "update", "delete"]),
-      allow.group("admins").to(["create", "read", "update", "delete"]),
-    ]),
-
-  Announcement: a
-    .model({
-      title: a.string().required(),
-      content: a.string().required(),
-      priority: a.string().default("normal"), // low, normal, high, urgent
-      createdBy: a.string(),
-      createdAt: a.datetime(),
-    })
-    .authorization((allow) => [
-      allow.authenticated().to(["read"]),
       allow.group("admins").to(["create", "read", "update", "delete"]),
     ]),
 });
